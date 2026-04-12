@@ -9,6 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// MongoDb connections code // 
 const connectDB = async () => {
    try{
     const connetion = await mongoose.connect(process.env.MONGODB_URL);
@@ -18,7 +19,7 @@ const connectDB = async () => {
    } catch (error){
     console.error("Error connecting to MongoDB:", error);
    }
-};
+}; 
  
 app.get("/",(req, res) => {
   res.json({
@@ -27,10 +28,15 @@ app.get("/",(req, res) => {
   });
 });
 
+app.get("/api/test",( req, res)=>{
+  res.json({
+    message: "API is working fine!🙂"});
+});
+
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-    connectDB();
+    connectDB(); // MongoDB connenction called here //
 });
 
