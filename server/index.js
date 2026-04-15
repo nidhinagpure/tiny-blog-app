@@ -37,6 +37,7 @@ const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-    connectDB(); // MongoDB connenction called here //
+    // MongoDB connenction called here //
+    connectDB(); 
 });
 
