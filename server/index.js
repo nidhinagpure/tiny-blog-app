@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import { postSignup,postLogin } from "./controllers/user.js";
 dotenv.config();
 
 const app = express();
@@ -11,14 +12,14 @@ app.use(cors());
 
 // MongoDb connections code // 
 const connectDB = async () => {
-   try{
+  try{
     const connetion = await mongoose.connect(process.env.MONGODB_URL);
     if(connetion){
       console.log("MONGODB CONNECTED");
     }
-   } catch (error){
+  } catch (error){
     console.error("Error connecting to MongoDB:", error);
-   }
+  }
 }; 
  
 app.get("/",(req, res) => {
@@ -33,11 +34,14 @@ app.get("/api/test",( req, res)=>{
     message: "API is working fine!🙂"});
 });
 
+app.post("/signup",postSignup);
+
+app.post("/login",postLogin);
+
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-    // MongoDB connenction called here //
-    connectDB(); 
+    connectDB();// MongoDB connenction called here //
 });
 
