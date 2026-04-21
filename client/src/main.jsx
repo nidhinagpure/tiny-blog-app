@@ -4,7 +4,7 @@ import './index.css';
 import AllBlogs from './views/AllBlogs';
 import NewBlog from './views/NewBlog';
 import EditBlog from './views/EditBlog';
-import ReadBlog from './views/ReadBlog';
+import ReadBlogs from './views/ReadBlogs';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -12,8 +12,8 @@ createRoot(document.getElementById('root')).render(
       <Route path="/" element={<AllBlogs />} />
       <Route path="/new" element={<NewBlog />} />
       <Route path="/edit/:id" element={<EditBlog />} />
-      <Route path="/blog/:slug" element={<ReadBlog />} />
-      <Route path="*" element={<h1 className="text-center mt-5"> 404 Not Found<h1></h1></h1>} />
+      <Route path="/blog/:slug" element={<ReadBlogs />} />
+      <Route path="*" element={<div className="text-center mt-5"> 404 Not Found<h1></h1></div>} />
     </Routes>
   </BrowserRouter>
 )
