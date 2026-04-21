@@ -34,8 +34,7 @@ app.get("/api/test",( req, res)=>{
     message: "API is working fine!🙂"});
 });
 
-app.post("/signup",postSignup);
-
+app.post("/signup" ,postSignup);
 app.post("/login",postLogin);
 
 const PORT = process.env.PORT || 8080;
@@ -44,4 +43,3 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
     connectDB();// MongoDB connenction called here //
 });
-
