@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import { postSignup,postLogin } from "./controllers/user.js";
+import { postSignup,postLogin } from "./../controllers/user.js";
 dotenv.config();
 
 const app = express();
