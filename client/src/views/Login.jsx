@@ -1,9 +1,28 @@
 import React from 'react'
+import { Link } from 'react-router';
 
-function Login() {
+
+function Signup() {
   return (
-    <div>Login</div>
+    <div>
+      <h1 className="text-center text-2xl mt-4 font-bold">Login</h1>
+      <div className='max-w-[400px] mx-auto border-1 border-gray-300 py-4 px-4 rounded-md mt-6'>
+        <input 
+            type="email" 
+            placeholder='Enter Your Email'
+            className='border p-2 rounder w-full mb-4 rounded-sm '/>
+        <input 
+            type="password" 
+            placeholder='Confirm your password'
+            className='border p-2 rounder w-full mb-4 rounded-sm '
+            />
+        <button className='bg-blue-500 text-white py-2 px-8 rounded hover:bg-blue-600'>Login</button>
+        <p className='mt-2'>Don't have an account?{""}
+            <Link to="/signup" className='text-blue-500 underline' className="text-blue-500 pl-1 underline">Signup</Link>
+        </p>
+      </div>
+    </div>
   )
 }
 
-export default Login
+export default Signup
