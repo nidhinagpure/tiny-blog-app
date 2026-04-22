@@ -5,6 +5,8 @@ import AllBlogs from './views/AllBlogs';
 import NewBlog from './views/NewBlog';
 import EditBlog from './views/EditBlog';
 import ReadBlogs from './views/ReadBlogs';
+import Login from './views/Login';
+import Signup from './views/Signup';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -14,6 +16,8 @@ createRoot(document.getElementById('root')).render(
       <Route path="/edit/:id" element={<EditBlog />} />
       <Route path="/blog/:slug" element={<ReadBlogs />} />
       <Route path="*" element={<div className="text-center mt-5"> 404 Not Found<h1></h1></div>} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
     </Routes>
   </BrowserRouter>
 )
