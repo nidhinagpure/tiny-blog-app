@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router';
 
 
-function Signup() {
+function Login() {
   return (
     <div>
       <h1 className="text-center text-2xl mt-4 font-bold">Login</h1>
@@ -25,4 +25,4 @@ function Signup() {
   )
 }
 
-export default Signup
+export default Login
