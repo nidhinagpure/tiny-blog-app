@@ -7,6 +7,7 @@ import EditBlog from './views/EditBlog';
 import ReadBlogs from './views/ReadBlogs';
 import Login from './views/Login';
 import Signup from './views/Signup';
+import Clock from './components/Clock';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -18,6 +19,7 @@ createRoot(document.getElementById('root')).render(
       <Route path="*" element={<div className="text-center mt-5"> 404 Not Found<h1></h1></div>} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/clock" element={<Clock />} />
     </Routes>
   </BrowserRouter>
 )
